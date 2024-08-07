@@ -6,7 +6,7 @@ var logger = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.set("strictQuery", "false");
-const mongoDB = "mongodb+srv://admin:admin@cluster0.x1kzwf0.mongodb.net/used_cars?retryWrites=true&w=majority&appName=Cluster0";
+const mongoDB = process.env.MONGODB_URI;
 
 
 var indexRouter = require('./routes/index');
