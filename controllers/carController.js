@@ -27,8 +27,6 @@ exports.car_list = asyncHandler(async (req, res, next) => {
       Car.countDocuments().exec(),
     ]);
 
-    console.log("Cars retrieved:", allCars); // Log the cars to see the data
-
     const totalPages = Math.ceil(totalCars / limit);
 
     res.render("car_list", {

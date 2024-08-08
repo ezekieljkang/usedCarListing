@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-
 const Schema = mongoose.Schema;
 
 const CarSchema = new Schema({
@@ -12,6 +11,7 @@ const CarSchema = new Schema({
   duration_listed: { type: Number, required: true},
   color: {type: String, required: true},
 }, { collection: 'inventory' });
+
 
 CarSchema.virtual("url").get(function () {
   return `/catalog/${this._id.toString()}`;
