@@ -44,13 +44,15 @@ exports.car_list = asyncHandler(async (req, res, next) => {
 
 // Display detail page for a specific car
 exports.car_detail = asyncHandler(async (req, res, next) => {
-  const car = await Car.findById(req.params.id).exec();
-  if (car === null) {
-    const err = new Error("Car not found");
-    err.status = 404;
-    return next(err);
+  try {
+    const car = await Car.findById(req.params.id).exec();
+    if (!car) {
+      return next(new Error('Car not found'));
+    }
+    res.render('car_detail', { title: 'Car Detail', car: car });
+  } catch (err) {
+    next(err);
   }
-  res.render("car_detail", { title: "Car Detail", car: car });
 });
 
 // Display car create form on GET

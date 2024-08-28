@@ -7,9 +7,13 @@ const CarSchema = new Schema({
   year_produced: { type: Number, required: true },
   odometer_value: { type: Number, required: true },
   price_usd: { type: Number, required: true },
-  engine_capacity: { type: Number, required: true},
-  duration_listed: { type: Number, required: true},
-  color: {type: String, required: true},
+  engine_capacity: { type: Number, required: true },
+  duration_listed: { type: Number, required: true },
+  color: {type: String, required: true },
+  transmission: { type: String, required: true },
+  engine_type: { type: String, required: true },
+  body_type: { type: String, required: true },
+  duration_listed: { type: Number, required: true },
 }, { collection: 'inventory' });
 
 

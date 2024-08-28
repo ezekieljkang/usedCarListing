@@ -6,12 +6,14 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
       <% cars.forEach(car => { %>
         <div class="bg-white rounded-lg shadow-md">
-          <div class="p-4">
-            <h2 class="text-xl font-semibold mb-2"><%= car.manufacturer_name %> <%= car.model_name %></h2>
-            <p class="text-gray-600 mb-2">Price: $<%= car.price_usd %></p>
-            <p class="text-gray-600">Year: <%= car.year_produced %></p>
-            <!-- Add more details as needed -->
-          </div>
+          <a href="/catalog/cars/<%= car._id %>">
+            <div class="p-4">
+              <h2 class="text-xl font-semibold mb-2"><%= car.manufacturer_name %> <%= car.model_name %></h2>
+              <p class="text-gray-600 mb-2">Price: $<%= car.price_usd %></p>
+              <p class="text-gray-600">Year: <%= car.year_produced %></p>
+              <!-- Add more details as needed -->
+            </div>
+          </a>
         </div>
       <% }) %>
     </div>
